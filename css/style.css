@@ -68,6 +68,22 @@ Table of contents
  /* commom css end*/
 
 /* header start */
+#header.menu_animate{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999999;
+    animation: smooth .3s;
+ }
+ @keyframes smooth {
+    0%{
+       top:-50px;
+    }
+    100%{
+       top:0px;
+    }
+ }
 #header .top_header{
     background-color:var(--font_color_2);
     width: 100%;
@@ -242,8 +258,8 @@ Table of contents
 /* nav menu end */
 
 /* banner start */
-#banner{
-    background-image: url(../images/banner.jpg);
+/*#banner{
+    
     background-size: cover;
     background-position: center left;
     text-align: center;
@@ -260,7 +276,85 @@ Table of contents
     top:0;
     left: 0;
     z-index: -1;
-}
+}*/
+#banner .banner_slider_item{
+    background-size: cover !important;
+    background-position: center !important;
+    text-align: center;
+    height: 600px;
+    position:relative;
+    z-index:1;
+ }
+ 
+ #banner .banner_slider_item::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.66);
+    top:0;
+    left: 0;
+    z-index: -1;
+ }
+ #banner .banner_slider .banner_slider_icon{
+    color:#cfc91d;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #02918c;
+    z-index: 99999;
+    position: absolute;
+    top:calc(50% - 25px);
+    left: 50px;
+    cursor: pointer;
+    transition: all linear .3s;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform:rotateX(90deg);
+    transition: 1s;
+ }
+ #banner:hover .banner_slider .banner_slider_icon{
+    opacity: 1;
+    visibility: visible;
+    transform:rotateX(0);
+ }
+ #banner:hover .banner_slider .banner_slider_icon:hover{
+    border-color: #cfc91d;
+ }
+ #banner .banner_slider .banner_slider_dots{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+ }
+ #banner .banner_slider .banner_slider_dots li{
+    display: inline-block;
+    line-height: 0;
+    margin: 0 5px;
+ }
+ #banner .banner_slider .banner_slider_dots li button{
+    border: none;
+    background: none;
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #02918c;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all linear .3s;
+ }
+ #banner .banner_slider .banner_slider_dots li.slick-active button{
+    background-color: #cfc91d;
+ }
+ #banner .banner_slider .banner_slider_icon.fa-arrow-right{
+    right: 50px;
+    left: auto;
+ }
+ #banner .banner_slider .banner_slider_icon:hover{
+    background-color: #02918c;
+ }
 #banner .container,
 #banner .row{
    height:100%;

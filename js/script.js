@@ -28,4 +28,23 @@ $(function () {
       );
     }
   });
+  $(window).on('scroll', function () {
+
+    if ($(window).scrollTop() > $('#header').height()) {
+       $('#header').addClass('menu_animate')
+    } else {
+       $('#header').removeClass('menu_animate')
+    }
+ })
+
+ $('.banner_slider').slick({
+  prevArrow:'<i class="banner_slider_icon fas fa-arrow-left"></i>',
+  nextArrow: '<i class="banner_slider_icon fas fa-arrow-right"></i>',
+  dots: true,
+  dotsClass: 'banner_slider_dots',
+  fade:true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  speed:2000,
+})
 })
