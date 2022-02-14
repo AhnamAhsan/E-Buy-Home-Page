@@ -84,41 +84,41 @@ Table of contents
        top:0px;
     }
  }
-#header .top_header{
+#top_header{
     background-color:var(--font_color_2);
     width: 100%;
 }
 
-#header .top_header ul li{
+#top_header ul li{
     display: inline-block;
     border-right: 1px solid #fff;
     padding: 10px 5px;
 }
-#header .top_header ul li:last-child{
+#top_header ul li:last-child{
     border-right: none;
 }
 /* header left start */
-#header .header_left,
-#header .header_right{
+#top_header .header_left,
+#top_header .header_right{
    width: 50%;
 }
-#header ul li{
+#top_header ul li{
    display: inline-block;
 }
-#header .header_left select{
+#top_header .header_left select{
    background: none;
    border: none;
    color: white;
 }
-#header .header_left select option{
+#top_header .header_left select option{
     background-color: var(--font_color_2);
 }
-#header .header_left ul li{
+#top_header .header_left ul li{
    font-size: 13px;
    padding: 10px;
    border-right: 1px solid #fff;
 }
-#header .header_left ul li a{
+#top_header .header_left ul li a{
     color: var(--white_color);
     font-size: 13px;
     padding: 30px 15px;
@@ -127,16 +127,16 @@ Table of contents
 /* header left end */
 
 /* header right start */
-#header .header_right{
+#top_header .header_right{
    text-align: right;
 }
-#header .header_right ul li a{
+#top_header .header_right ul li a{
     color: var(--white_color);
     font-size: 13px;
     padding: 30px 15px;
     transition: 0.5s;
 }
-#header .header_right ul li a:hover{
+#top_header .header_right ul li a:hover{
     color: var(--hlt_color);
 }
 /* header right end */
@@ -145,7 +145,7 @@ Table of contents
 
 /* nav menu start */
 
-.nav{
+#header{
     background-color: var(--white_color);
 }
 .logo{
@@ -163,7 +163,7 @@ Table of contents
     display: block;
     color: var(--font_color);
     font-size: 16px;
-    margin-top: 35px;
+    margin-top: 40px;
     padding: 10px;
     transition: 0.5s;
     position: relative;
@@ -258,25 +258,7 @@ Table of contents
 /* nav menu end */
 
 /* banner start */
-/*#banner{
-    
-    background-size: cover;
-    background-position: center left;
-    text-align: center;
-    height: 600px;
-    position: relative;
-    z-index: 1;
-}
-#banner::after{
-    content:'';
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-color: rgba(0,0,0,0.60);
-    top:0;
-    left: 0;
-    z-index: -1;
-}*/
+
 #banner .banner_slider_item{
     background-size: cover !important;
     background-position: center !important;
@@ -297,23 +279,27 @@ Table of contents
     z-index: -1;
  }
  #banner .banner_slider .banner_slider_icon{
-    color:#cfc91d;
-    width: 50px;
-    height: 50px;
+    color: var(--white_color);
+    width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 50px;
-    border: 1px solid #02918c;
+    line-height: 40px;
+    border: 1px solid var(--white_color);
     z-index: 99999;
     position: absolute;
-    top:calc(50% - 25px);
-    left: 50px;
+    top: calc(90% - 20px);
+    left: calc(50% - 55px);
     cursor: pointer;
     transition: all linear .3s;
-    border-radius: 50%;
     opacity: 0;
     visibility: hidden;
-    transform:rotateX(90deg);
-    transition: 1s;
+    transform: rotateX(90deg)
+ }
+ 
+ #banner .banner_slider .banner_slider_icon.fa-chevron-right{
+    right: calc(50% - 50px);
+    left: auto;
+    top: calc(90% - 20px);
  }
  #banner:hover .banner_slider .banner_slider_icon{
     opacity: 1;
@@ -321,13 +307,14 @@ Table of contents
     transform:rotateX(0);
  }
  #banner:hover .banner_slider .banner_slider_icon:hover{
-    border-color: #cfc91d;
+    border-color: transparent;
+    background-color: var(--hlt_color);
  }
  #banner .banner_slider .banner_slider_dots{
     text-align: center;
     position: absolute;
     width: 100%;
-    bottom: 50px;
+    bottom: 10px;
  }
  #banner .banner_slider .banner_slider_dots li{
     display: inline-block;
@@ -340,20 +327,13 @@ Table of contents
     font-size: 0;
     width: 15px;
     height: 15px;
-    border: 2px solid #02918c;
+    border: 2px solid var(--font_color_3);
     border-radius: 50%;
     cursor: pointer;
     transition: all linear .3s;
  }
  #banner .banner_slider .banner_slider_dots li.slick-active button{
-    background-color: #cfc91d;
- }
- #banner .banner_slider .banner_slider_icon.fa-arrow-right{
-    right: 50px;
-    left: auto;
- }
- #banner .banner_slider .banner_slider_icon:hover{
-    background-color: #02918c;
+    background-color: var(--hlt_color);
  }
 #banner .container,
 #banner .row{
@@ -419,33 +399,6 @@ Table of contents
     border: 1px solid transparent;
 }
 
-.arrow{
-    font-size: 24px;
-    margin-top: -60px;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-.arrow a{
-    color: var(--white_color);
-    padding: 7px 9px;
-    border: 1px solid var(--white_color);
-    margin-right: 20px;
-    transition: all linear 0.5s;
-}
-.arrow a:last-child{
-    padding: 7px 12px;
-    background-color: var(--hlt_color);
-    border: 1px solid transparent;
-    transition: all linear 0.5s;
-}
-.arrow a:hover{
-    border: 1px solid transparent;
-    background-color: var(--hlt_color);
-}
-.arrow a:last-child:hover{
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid var(--white_color);
-}
 /* banner end */
 
 /* sec info start */
@@ -1024,6 +977,7 @@ Table of contents
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    z-index: 99;
  }
 
  @keyframes load {

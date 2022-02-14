@@ -38,8 +38,10 @@ $(function () {
  })
 
  $('.banner_slider').slick({
-  prevArrow:'<i class="banner_slider_icon fas fa-arrow-left"></i>',
-  nextArrow: '<i class="banner_slider_icon fas fa-arrow-right"></i>',
+  prevArrow:'<i class="banner_slider_icon fas fa-chevron-left"></i>',
+  //prevArrow:'<i class="banner_slider_icon fas fa-arrow-left"></i>',
+  nextArrow: '<i class="banner_slider_icon fas fa-chevron-right"></i>',
+  //nextArrow: '<i class="banner_slider_icon fas fa-arrow-right"></i>',
   dots: true,
   dotsClass: 'banner_slider_dots',
   fade:true,
